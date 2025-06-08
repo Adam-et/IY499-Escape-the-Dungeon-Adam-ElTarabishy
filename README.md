@@ -65,7 +65,7 @@ IY499/
 └── .git/               # Git repository files
 
 Repository
-GitHub Repository: []
+GitHub Repository: [https://github.com/Adam-et/IY499-Escape-the-Dungeon-Adam-ElTarabishy.git]
 
 Testing
 The game has been tested for:
