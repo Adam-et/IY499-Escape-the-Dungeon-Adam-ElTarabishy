@@ -1,0 +1,119 @@
+{
+  "player": {
+    "inventory": [],
+    "current_room": "Prison Cell",
+    "health": 100
+  },
+  "rooms": {
+    "Prison Cell": {
+      "name": "Prison Cell",
+      "description": "A damp, cold cell with stone walls. Water drips from the ceiling. There's a door to the NORTH.",
+      "items": [
+        {
+          "name": "Torch",
+          "description": "A burning torch that lights the way.",
+          "usable": false,
+          "required_for": []
+        }
+      ],
+      "connections": {
+        "north": "Corridor"
+      },
+      "locked": false,
+      "unlock_item": null,
+      "visited": true
+    },
+    "Corridor": {
+      "name": "Corridor",
+      "description": "A long, dark hallway with doors on both sides. You can go SOUTH to your cell, EAST to a locked armory, WEST to what looks like a guard post, or NORTH to another room.",
+      "items": [],
+      "connections": {
+        "south": "Prison Cell",
+        "east": "Armory",
+        "west": "Guard Post",
+        "north": "Treasure Room"
+      },
+      "locked": false,
+      "unlock_item": null,
+      "visited": false
+    },
+    "Armory": {
+      "name": "Armory",
+      "description": "A room filled with weapons and armor on the walls.",
+      "items": [
+        {
+          "name": "Iron Sword",
+          "description": "A sharp iron sword for protection.",
+          "usable": true,
+          "required_for": [
+            "Guard Post"
+          ]
+        },
+        {
+          "name": "Health Potion",
+          "description": "Restores health when used.",
+          "usable": true,
+          "required_for": []
+        }
+      ],
+      "connections": {
+        "west": "Corridor"
+      },
+      "locked": true,
+      "unlock_item": "Rusty Key",
+      "visited": false
+    },
+    "Guard Post": {
+      "name": "Guard Post",
+      "description": "The guards' quarters with a table and chairs. The guards seem to have left in a hurry.",
+      "items": [
+        {
+          "name": "Rusty Key",
+          "description": "An old, rusty key that might open something.",
+          "usable": true,
+          "required_for": [
+            "Armory"
+          ]
+        }
+      ],
+      "connections": {
+        "east": "Corridor"
+      },
+      "locked": false,
+      "unlock_item": null,
+      "visited": false
+    },
+    "Treasure Room": {
+      "name": "Treasure Room",
+      "description": "A glittering room filled with gold and jewels. There's a passage to the NORTH.",
+      "items": [
+        {
+          "name": "Golden Key",
+          "description": "A pristine golden key.",
+          "usable": true,
+          "required_for": [
+            "Exit Gate"
+          ]
+        }
+      ],
+      "connections": {
+        "south": "Corridor",
+        "north": "Exit Gate"
+      },
+      "locked": false,
+      "unlock_item": null,
+      "visited": false
+    },
+    "Exit Gate": {
+      "name": "Exit Gate",
+      "description": "Heavy iron gates leading to freedom! The lock looks like it needs a special key.",
+      "items": [],
+      "connections": {},
+      "locked": true,
+      "unlock_item": "Golden Key",
+      "visited": false
+    }
+  },
+  "game_over": false,
+  "won": false
+}
